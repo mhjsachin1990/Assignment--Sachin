@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Update information</h1>
+    <form action="update_students_record/{{students.id}}" method="post">
+        {% csrf_token %}
+        First Name:<br>
+        <input name="first_name" value="{{students.first_name}}"><br>
+        Last Name: <br>
+        <input name="last_name" value="{{students.last_name}}"><br>
+        Date of Birth (YYYY-MM-DD):<br>
+        <input name="dob" value="{{students.dob}}"><br>
+        Roll Number:<br>
+        <input name="roll_number" value="{{students.roll_number}}"><br>
+        Department Name:<br>
+        <input name="department_name" value="{{students.department_name}}"><br>
+        Course Name:<br>
+        <input name="course_name" value="{{students.course_name}}"><br>
+        Semester Number:<br>
+        <input name="semester_number" value="{{students.semester_number}}"><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

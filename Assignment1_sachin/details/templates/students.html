@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Student Records</h1>
+    {% if students %}
+        <table border="1" style="height:10px; width:50%;">
+            <tr>
+                <th>SN.</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Roll No.</th>
+                <th>Department Name</th>
+                <th>Course Name</th>
+                <th>Semester No.</th>
+                <th>Age</th>
+            </tr>
+        {% for x in students %}
+            <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.first_name }}</td>
+                <td>{{ x.last_name }}</td>
+                <td>{{ x.dob }}</td>
+                <td>{{ x.roll_number }}</td>
+                <td>{{ x.department_name }}</td>
+                <td>{{ x.course_name }}</td>
+                <td>{{ x.semester_number }}</td>
+                <td>{{ x.age }}</td>
+                <td><a href="update_students/{{ x.id }}">Update</a></td>
+                <td><a href="delete_students/{{ x.id }}">Delete</a></td>
+            </tr>
+        {% endfor %}
+         </table>
+    {% else %}
+         <h3>Data is empty.</h3>
+    {% endif %}
+    <p>
+        <a href="add_students/">
+                <input type="button" value="Add new students">
+        </a><br><br>
+        <a href="{% url 'home' %}"> Home </a><br><br>
+        <a href="{% url 'details' %}">Go back</a><br><br>
+        <a href="{% url 'department' %}">Department</a>
+    </p>
+</body>
+</html>

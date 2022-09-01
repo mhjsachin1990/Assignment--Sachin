@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Department</title>
+</head>
+<body>
+    <h1>Add Department</h1>
+    <form action="add_department_record/"  method="POST" >
+        {% csrf_token %}
+        {{ add_department.as_p }}
+        <input type="submit" value="Submit"><br><br><br>
+
+        <a href="{% url 'home' %}"> Home </a><br><br>
+        <a href="{% url 'department' %}">Go back</a>
+    </form>
+</body>
+</html>
